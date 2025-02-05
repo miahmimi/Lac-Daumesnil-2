@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#vanta-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30, 60, 114, 0.9);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+.content {
+    position: relative;
+    z-index: 1; 
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: #fff;
+    clip-path: path('M0,100 C150,200 300,0 500,100 C700,200 850,0 1000,100 L1000,300 L0,300 Z');
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+}
+
+.hero a {
+    padding: 10px 20px;
+    background: rgba(30, 60, 114, 0.9);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero a:hover {
+    background: #ffcc00;
+}
+
+.content {
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    color: #333;
+}
+
+.content section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content section p {
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.logo {
+    margin-right: 100px; 
+}
+
+#section1 {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#section1 .text {
+    flex: 1;
+    padding: 20px;
+}
+
+#section1 .images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#section1 .images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#section1 .images img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#section2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 20px;
+}
+
+.map-container {
+    flex: 1;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    flex: 1;
+    padding: 20px;
+}
+
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#section3 {
+    max-width: 1000px;
+    text-align: center;
+    background: rgba(30, 60, 114, 0.9);
+}
+
+#section3 h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#section3 p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#section3 .image-carousel {
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    gap: 20px;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+#section3 .image-carousel img {
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#section3 .image-carousel img:hover {
+    transform: scale(1.1);
+}
+
+#section4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+#section4 .text {
+    flex: 1;
+    padding: 20px;
+}
+
+#section4 .images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#section4 .images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#section4 .video {
+    flex: 1;
+	border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#section4 .video video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+#section1::before, 
+#section2::before, 
+#section3::before, 
+#section4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/logo2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px; /* Ajustez la taille du logo */
+    background-attachment: fixed;
+    opacity: 0.2; 
+    pointer-events: none;
+    z-index: -1;
+}
+
+#section1, #section2, #section3, #section4 {
+    position: relative; 
+}

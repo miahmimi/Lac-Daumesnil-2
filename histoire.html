@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lac Daumesnil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+            <a href="/">
+                <img src="img/logo.png" alt="Logo">
+            </a>
+        </div>
+        
+    <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#section1">Histoire</a></li>
+        <li><a href="visiter le lac.html">Visiter le Lac</a></li>
+        <li><a href="activités et loisirs.html">Activités et loisirs </a></li>
+		<li><a href="nature et environnement.html">Nature et environnement </a></li>
+		<li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+<div id="vanta-bg"></div>
+
+    <div class="content">
+        <section class="hero" id="hero">
+		<video autoplay muted loop playsinline class="background-video">
+        <source src="video/fond.mp4" type="video/mp4">
+       
+    </video>
+            <div>
+                <h1>Histoire</h1>
+                <p style= "color : white;">Le lac Daumesnil, une oasis de verdure au cœur de Paris, idéale pour l’évasion et la détente.</p>
+                <a href="visiter le lac.html">Visiter le lac</a>
+            </div>
+        </section>
+
+        <section id="section1">
+            <div class="text">
+                <h2></h2>
+                <p>Le lac Daumesnil, situé au cœur du bois de Vincennes à Paris, est un lieu emblématique, chargé d'histoire et apprécié pour sa beauté naturelle. Ce lac artificiel, créé au XIXe siècle, est un exemple parfait de l'aménagement urbain pensé pour offrir un espace de détente et de loisirs aux Parisiens.</p>
+            </div>
+            <div class="images">
+            <img src="img/img11.png" alt="section1 Image">
+            </div>
+
+        </section>
+
+        <section id="section2">
+            <div class="image">
+                <img src="img/img10.png" alt="Service Image">
+            </div>
+            <div class="text">
+                <h2>La création du lac Daumesnil</h2>
+                <p>Le lac Daumesnil a vu le jour entre 1855 et 1860, dans le cadre des grands travaux de réaménagement de Paris. Sous la direction du baron Haussmann, le bois de Vincennes a été transformé en un parc public accessible à tous, inspiré des jardins anglais. Le lac, alimenté par la rivière de la Marne, a été conçu pour offrir un espace de loisirs et de détente, tout en valorisant la beauté naturelle du site.Son nom rend hommage au général Pierre Daumesnil, célèbre pour son courage pendant les guerres napoléoniennes. La légende raconte qu’il aurait déclaré : « J’ai une jambe de bois, mais elle ne capitulera jamais ! », ce qui en a fait une figure héroïque de l’histoire française.</p>
+            </div>
+        </section>
+
+        <section id="section3">
+            <h2>Un lieu chargé d’histoire</h2>
+            <p>Dès son inauguration, le lac Daumesnil est devenu un lieu de promenade prisé par les Parisiens. Les deux îles principales, reliées par des ponts pittoresques, offraient un cadre romantique propice à l’évasion. Pendant les guerres mondiales, le bois de Vincennes et le lac ont été utilisés à des fins stratégiques, témoignant ainsi de leur importance dans l’histoire de la ville.Aujourd’hui, le lac conserve son charme d’antan tout en étant adapté aux besoins modernes. Les visiteurs y viennent pour profiter des activités nautiques, se promener ou simplement admirer la faune et la flore qui y prospèrent.</p>
+             <div class="image">
+                <img src="img/img20.jpg" alt="">
+            </div>
+        </section>
+		 <section id="section4">
+            <div class="text">
+                <h2>Les merveilles du lac Daumesnil</h2>
+                <p>L’île de Reuilly, l’une des deux îles principales du lac, est un lieu prisé des promeneurs grâce à son architecture pittoresque et son atmosphère paisible. À proximité, des grottes artificielles, des cascades et des ponts ajoutent une touche de mystère et de charme au paysage. Le lac est également un havre pour la faune locale : cygnes, canards et autres oiseaux aquatiques y trouvent refuge, tandis que les rives sont bordées de saules pleureurs et de rosiers. Ce parfait équilibre entre nature et aménagements en fait un lieu exceptionnel où il fait bon se ressourcer.</p>
+            </div>
+            <div class="images">
+            <img src="img/img8.png" alt="section1 Image">
+            </div>
+
+        </section>
+    </div>
+<a href="#hero" class="scroll-to-top" id="scrollToTop">
+    &#8679;
+</a>
+
+    <footer>
+        <p>&copy;  2025 - Réalisation par Yousra.</p>
+    </footer>
+	<script>
+    const carousel = document.querySelector('.image-carousel');
+    const carouselWidth = carousel.scrollWidth - carousel.clientWidth;
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const scrollPercentage = scrollPosition / maxScroll;
+        carousel.scrollLeft = scrollPercentage * carouselWidth;
+    });
+</script>
+<script>
+    // Récupérer l'élément
+    const scrollToTop = document.getElementById('scrollToTop');
+
+    // Ajouter un événement pour surveiller le défilement
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Afficher après 200px
+            scrollToTop.style.opacity = '1';
+            scrollToTop.style.visibility = 'visible';
+        } else {
+            scrollToTop.style.opacity = '0';
+            scrollToTop.style.visibility = 'hidden';
+        }
+    });
+
+   
+    scrollToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<script>
+    VANTA.WAVES({
+        el: "#vanta-bg",
+        color: 0x6495ED, // bleu comme un lac
+		backgroundColor: 0xffffff,
+        shininess: 50, // Brillance des ondulations
+        waveHeight: 20, // Hauteur des vagues
+        waveSpeed: 0.5, // Vitesse des vagues
+        zoom: 1.2 // Zoom sur l'effet
+    });
+</script>
+
+</body>
+</html>

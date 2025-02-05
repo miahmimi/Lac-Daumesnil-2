@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lac Daumesnil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+             <a href="/">
+                <img src="img/logo.png" alt="Logo " />
+             </a>
+            </div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="visiter le lac.html">Visiter le Lac</a></li>
+                <li><a href="activités et loisirs.html">Activités et loisirs </a></li>
+				<li><a href="nature et environnement.html">Nature et environnement </a></li>
+				<li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="vanta-bg"></div>
+    <div class="content">
+        <section class="hero" id="hero">
+		<video autoplay muted loop playsinline class="background-video">
+        <source src="video/fond.mp4" type="video/mp4">
+       
+    </video>
+            <div>
+                <h1>Bienvenue au Lac Daumesnil</h1>
+                <p style= "color : white;">Le lac Daumesnil, une oasis de verdure au cœur de Paris, idéale pour l’évasion et la détente.</p>
+                <a href="visiter le lac.html">Visiter le lac</a>
+            </div>
+        </section>
+
+        <section id="section3">
+            <h2>Informations de contact</h2>
+            <p>SIDANE Yousra<br>yousra.sidane77@gmail.com<br>0761439250</p>
+            <div class="image-carousel">
+                <img src="img/img4.jpg" alt="Image 1">
+                <img src="img/img8.png" alt="Image 2">
+                <img src="img/img10.png" alt="Image 3">
+                <img src="img/img11.png" alt="Image 4">
+				<img src="img/img12.png" alt="Image 3">
+                
+            </div>
+        </section>
+		
+    </div>
+	</div>
+<a href="#hero" class="scroll-to-top" id="scrollToTop">
+    &#8679;
+</a>
+
+    <footer>
+        <p>&copy;  2025 - Réalisation par Yousra.</p>
+    </footer>
+	<script>
+    const carousel = document.querySelector('.image-carousel');
+    const carouselWidth = carousel.scrollWidth - carousel.clientWidth;
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+    
+        const scrollPercentage = scrollPosition / maxScroll;
+        carousel.scrollLeft = scrollPercentage * carouselWidth;
+    });
+</script>
+<script>
+    // Récupérer l'élément
+    const scrollToTop = document.getElementById('scrollToTop');
+
+    // Ajouter un événement pour surveiller le défilement
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Afficher après 200px
+            scrollToTop.style.opacity = '1';
+            scrollToTop.style.visibility = 'visible';
+        } else {
+            scrollToTop.style.opacity = '0';
+            scrollToTop.style.visibility = 'hidden';
+        }
+    });
+
+    
+    scrollToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<script>
+    VANTA.WAVES({
+        el: "#vanta-bg",
+        color: 0x6495ED, // bleu comme un lac
+		backgroundColor: 0xffffff,
+        shininess: 50, // Brillance des ondulations
+        waveHeight: 20, // Hauteur des vagues
+        waveSpeed: 0.5, // Vitesse des vagues
+        zoom: 1.2 // Zoom sur l'effet
+    });
+</script>
+</body>
+</html>

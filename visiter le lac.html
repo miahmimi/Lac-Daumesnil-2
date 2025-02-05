@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lac Daumesnil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style2.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+      <nav>
+        <div class="logo">
+            <a href="/">
+                <img src="img/logo.png" alt="Logo">
+            </a>
+        </div>
+        
+    <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="histoire.html">Histoire</a></li>
+        <li><a href="visiter le lac.html">Visiter le Lac</a></li>
+        <li><a href="activités et loisirs.html">Activités et loisirs </a></li>
+		<li><a href="nature et environnement.html">Nature et environnement </a></li>
+		<li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+<div id="vanta-bg"></div>
+
+    <div class="content">
+        <section class="hero" id="hero">
+		<video autoplay muted loop playsinline class="background-video">
+        <source src="video/fond.mp4" type="video/mp4">
+       
+    </video>
+            <div>
+                <h1>Visiter le Lac</h2>
+                <p style= "color : white;">Le lac Daumesnil, une oasis de verdure au cœur de Paris, idéale pour l’évasion et la détente.</p>
+               
+            </div>
+        </section>
+
+        <section id="section1">
+            <div class="text">
+                <h2>Introduction</h2>
+                <p>Préparez votre visite au lac Daumesnil pour une journée mémorable entre nature, détente et découvertes. Voici tout ce que vous devez savoir pour profiter au mieux de votre expérience.</p>
+            </div>
+            
+
+        </section>
+
+        <section id="section2">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="text">
+            <h2>Accès et localisation</h2>
+            <p>Le lac Daumesnil se trouve dans le bois de Vincennes, à l’est de Paris.<br>
+            <br><strong>En métro :</strong> Prenez la ligne 8 et descendez à la station "Porte Dorée".<br>
+            <strong>En bus :</strong> Les lignes 46 et 325 vous déposent à proximité.<br>
+            <strong>En voiture :</strong> Des parkings gratuits sont disponibles autour du bois de Vincennes.</p>
+        </div>
+    </section>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([48.8333, 2.4154], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+        L.marker([48.8333, 2.4154]).addTo(map)
+            .bindPopup("Lac Daumesnil, Bois de Vincennes")
+            .openPopup();
+    </script>
+
+        <section id="section3">
+            <h2>Horaires et tarifs :</h2>
+            <p>Le lac est accessible toute l’année, 24h/24.<br>Les locations de barques sont disponibles de 10h à 18h (selon la saison).<br>Les activités sont gratuites ou à prix abordables, parfaites pour toutes les bourses.</p>
+            <div class="image-carousel">
+                
+            </div>
+        </section>
+		 <section id="section4">
+            <div class="text">
+                <h2>Conseils pratiques </h2>
+                <p>Apportez une paire de chaussures confortables pour marcher.<br>Prévoyez un chapeau et de la crème solaire si vous visitez en été.<br>Respectez la nature : ne laissez aucun déchet derrière vous.</p>
+            </div>
+            <div class="images">
+            <img src="img/img3.jpg" alt="section1 Image"><br><a href="https://fr.freepik.com/vecteurs-libre/conception-camping-illustration_7177394.htm#fromView=search&page=1&position=0&uuid=76d6f372-d386-465f-9170-8a9b9238868e&new_detail=true&query=illustration+valise+camping+chaussure;"style="color: lightgray;">Image de studiogstock sur Freepik</a>
+            </div>
+
+        </section>
+    </div>
+<a href="#hero" class="scroll-to-top" id="scrollToTop">
+    &#8679;
+</a>
+
+    <footer>
+        <p>&copy;  2025 - Réalisation par Yousra.</p>
+    </footer>
+	<script>
+    const carousel = document.querySelector('.image-carousel');
+    const carouselWidth = carousel.scrollWidth - carousel.clientWidth;
+
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const scrollPercentage = scrollPosition / maxScroll;
+        carousel.scrollLeft = scrollPercentage * carouselWidth;
+    });
+</script>
+<script>
+    // Récupérer l'élément
+    const scrollToTop = document.getElementById('scrollToTop');
+
+    // Ajouter un événement pour surveiller le défilement
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) { // Afficher après 200px
+            scrollToTop.style.opacity = '1';
+            scrollToTop.style.visibility = 'visible';
+        } else {
+            scrollToTop.style.opacity = '0';
+            scrollToTop.style.visibility = 'hidden';
+        }
+    });
+
+    
+    scrollToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<script>
+    VANTA.WAVES({
+        el: "#vanta-bg",
+        color: 0x6495ED, // bleu comme un lac
+		backgroundColor: 0xffffff,
+        shininess: 50, // Brillance des ondulations
+        waveHeight: 20, // Hauteur des vagues
+        waveSpeed: 0.5, // Vitesse des vagues
+        zoom: 1.2 // Zoom sur l'effet
+    });
+</script>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+
+
+
+</body>
+</html>
